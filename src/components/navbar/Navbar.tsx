@@ -81,8 +81,8 @@ export default function Navbar() {
                 <Wrapper>
                     <LinkWrap display={state.isToggled ? "1" : '0'}>
                         <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"} href="#">Home</Link>
-                        <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#">Skills</Link>
-                        <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#">Projects</Link>
+                        <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#skills">Skills</Link>
+                        <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#projects">Projects</Link>
                     </LinkWrap>
 
                     <IconWrap>

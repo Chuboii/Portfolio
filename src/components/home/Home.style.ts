@@ -4,12 +4,9 @@ import styled from "styled-components";
 export const Container = styled.div`
 
   color: white;
-  position: absolute;
-  top: 50%;
+  position:relative;
+  top: 24rem;
   transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 3rem;
 
 `
@@ -48,11 +45,25 @@ background: rgb(2,0,36);
 background: radial-gradient(90deg, rgba(2,0,36,1) 0%, rgba(34,2,99,1) 35%);
 padding: .9rem;
 border: .5px solid white;
-width: 300px;
-font-size: 27px;
+width: 270px;
+text-align:center;
+font-size: 24px;
 font-family: 'Rubik Doodle Shadow';
 `
 export const Image = styled.img`
   width: 400px;
 `
 
+export const Connect = styled.div`
+  display:flex;
+  align-items:center;
+  position:relative;
+  top:3rem;
+  font-weight:700;
+`
+
+export const Box = styled.div`
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+`

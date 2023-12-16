@@ -27,7 +27,10 @@ export const Header = styled.header<HeaderProps>`
   top: 0;
   left: 0;
  right: 0;
+ height: 40px;
+ z-index: 2;
   padding:1rem 3rem;
+  transition: all .5s;
    background-color: ${({ changebg }) => changebg};
 
 `
