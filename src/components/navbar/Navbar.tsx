@@ -73,7 +73,7 @@ export default function Navbar() {
 
     return (
       <>
-            <Header changebg={state.isPageScrolled ? "#242424" : "transparent"}>
+            <Header changebg={state.isPageScrolled ? "#1c1c1d" : "transparent"}>
                 <Logo>Chuboi</Logo>
                 <DisplayMenu>
                     <MenuOutlinedIcon onClick={enableNavBar } />
