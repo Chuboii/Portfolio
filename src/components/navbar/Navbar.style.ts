@@ -70,8 +70,7 @@ export const IconWrap = styled.div`
     position: absolute;
     left: 2rem;
     flex-direction: column;
-    top: 13rem;
-      
+    top: 13rem;      
    }
 `
 
