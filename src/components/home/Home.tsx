@@ -2,9 +2,35 @@ import { Container, Connect, WrapImage, Welcome, Text, Intro, WrapText, Image,Bo
 import img from '../../assets/header-img.svg'
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import { TypeAnimation } from 'react-type-animation';
-
+import {useEffect, useState} from "react"
 
 function Home() {
+  /*
+  const [isMobile, setIsMobile] = useState(false)
+  
+  useEffect(()=>{
+    
+    function mobileResponsive(){
+      const windowWidth = window.innerWidth
+     
+      if(windowWidth < 768){
+        setIsMobile(true)
+      }
+      else{
+        setIsMobile(false)
+      }
+    }
+    
+    window.addEventListener("resize", mobileResponsive)
+    
+  return (()=>{
+    window.removeEventListener("resize", mobileResponsive)
+  })
+  },[isMobile])
+  
+  
+  */
+  
   return (
       <>
           <Container>
@@ -15,13 +41,12 @@ function Home() {
          <TypeAnimation
       sequence={[
         "Hi, I'm Onyechere Favour",
-        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        1000, 
         "I'm a full-stack developer",
-
       ]}
       wrapper="span"
       speed={30}
-      style={{ fontSize: '55px', display: 'inline-block' }}
+      style={{ fontSize: window.innerWidth < 768 ? "30px" : "55px", display: 'inline-block' }}
       repeat={Infinity}
     />
                   </Intro>

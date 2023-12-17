@@ -1,20 +1,24 @@
 import { DisplayMenu, Wrapper, Header, Logo, Button, LinkWrap, IconWrap, Link, Icon } from './Navbar.style';
 import React,{ useEffect, useState, useCallback, useReducer } from 'react'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 
 interface NavbarReducer {
     isPageScrolled: boolean;
     isToggled: boolean;
+    iconToggleDisplay: boolean
 }
 
 const TOGGLE_INITIAL_STATES : NavbarReducer= {
     isPageScrolled: false,
     isToggled: false,   
+    iconToggleDisplay:true
 }
 
 interface stateObject {
     isToggled: boolean;
     isPageScrolled: boolean;
+    iconToggleDisplay:boolean;
 }
 
 interface actionObject {
@@ -34,6 +38,10 @@ const toggleReducer : React.Reducer<stateObject, actionObject> = (state, action)
             return { ...state, isToggled: payload }
         case "INSERT_TEXT":
                 return { ...state, text: payload }
+        case "TOGGLE_ICONS_DISPLAY":
+            return {
+              ...state, iconToggleDisplay:payload
+            }
         default:
             return state
     }
@@ -56,6 +64,13 @@ export default function Navbar() {
                 dispatch({ type: "PAGE_SCROLLED", payload: false })
   
             }
+         // console.log(scrollY)
+          if(scrollY < 400){
+            dispatch({type:"TOGGLE_ICONS_DISPLAY", payload:true})
+          }
+          else{
+       dispatch({type:"TOGGLE_ICONS_DISPLAY", payload:false})
+          }
         }
 
         window.addEventListener("scroll", scrollFunction)
@@ -76,16 +91,23 @@ export default function Navbar() {
             <Header changebg={state.isPageScrolled ? "#1c1c1d" : "transparent"}>
                 <Logo>Chuboi</Logo>
                 <DisplayMenu>
-                    <MenuOutlinedIcon onClick={enableNavBar } />
+                 {state.isToggled ?
+               <CloseIcon onClick={enableNavBar } />
+                  : <MenuOutlinedIcon onClick={enableNavBar
+                  } /> 
+                 }
                 </DisplayMenu>
                 <Wrapper>
-                    <LinkWrap display={state.isToggled ? "1" : '0'}>
+                    <LinkWrap display={state.isToggled ? "1" : '0'}
+                      
+                    >
                         <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"} href="#">Home</Link>
                         <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#skills">Skills</Link>
                         <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#projects">Projects</Link>
                     </LinkWrap>
 
-                    <IconWrap>
+                    <IconWrap display={state.iconToggleDisplay ? "1" : '0'}
+                      >
                      <Icon><i className="fa fa-facebook" aria-hidden="true"></i></Icon>
                      <Icon><i className="fa fa-linkedin" aria-hidden="true"></i></Icon>
                      <Icon><i className="fa fa-github" aria-hidden="true"></i></Icon>   

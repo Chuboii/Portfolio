@@ -8,6 +8,10 @@ interface LinkWrapProps {
     display: string
 }
 
+interface IconWrapProps {
+  display:string
+}
+
 export const DisplayMenu = styled.div`
 display: block;
    @media screen and (min-width: 768px) {
@@ -32,7 +36,9 @@ export const Header = styled.header<HeaderProps>`
   padding:1rem 3rem;
   transition: all .5s;
    background-color: ${({ changebg }) => changebg};
-
+  @media screen and (max-width:768px){
+    padding:1rem 2rem;
+  }
 `
 
 export const Logo = styled.h2`
@@ -65,15 +71,17 @@ export const LinkWrap = styled.div<LinkWrapProps>`
    }
 `
 
-export const IconWrap = styled.div`
+export const IconWrap = styled.div<IconWrapProps>`
   display: flex;
    margin-right: 1rem;
 
    @media screen and (max-width:768px){
     position: absolute;
-    left: 2rem;
+    left: 1rem;
+    transition:all .5s;
     flex-direction: column;
     top: 13rem;      
+    opacity:${({display}) => display};
    }
 `
 
