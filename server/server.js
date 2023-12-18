@@ -2,6 +2,8 @@ import express from 'express';
 import nodemailer from 'nodemailer'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+import SubscribedUsers from './model/SubscribedUsers.js';
 
 const app = express()
 
@@ -9,8 +11,15 @@ const app = express()
 app.use(express.json())
 dotenv.config()
 
-const router = express.Router()
+const connect = () => {
+    mongoose.connect(process.env.MONGO)
+        .then(() => console.log("Connected to Mongo"))
+        .catch(e => console.log(e))
+} 
 
+
+const router = express.Router()
+const emailListRouter = express.Router()
 
 app.use(cors())
 
@@ -23,6 +32,29 @@ const transporter = nodemailer.createTransport({
     }
 })
 
+
+emailListRouter.post('/newsletter', async (req, res) => {
+    try {
+        const { email } = req.body
+        
+        const checkEmails = await SubscribedUsers.find({ email })
+        
+        console.log(checkEmails)
+    
+        if (checkEmails.length > 0) return res.status(500).json("Email already subscribbed")
+        
+        const subscribedUser = new SubscribedUsers({
+            email
+        })
+
+        subscribedUser.save()
+
+        res.status(200).json("User subscribed successfully")
+    }
+    catch (e) {
+        res.status(500).json(e)
+    }
+})
 
 
 router.post('/contact', (req, res) => {
@@ -61,9 +93,11 @@ router.post('/contact', (req, res) => {
 })
 
 app.use(`/api`, router)
+app.use("/api", emailListRouter)
 
 const port = process.env.PORT || 8080
 
 app.listen(port, () => {
     console.log("listening on port 8080")
+    connect()
 })
