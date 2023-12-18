@@ -1,8 +1,10 @@
 import { Container, Box, H2, Text, Img, Wrapper, SkillText } from "./Skills.style";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-
+import {FC} from "react"
+import ninety from "/src/assets/untitled (3).png"
+import ninetyFive from "/src/assets/untitled (1).png"
+import eighty from "/src/assets/untitled (2).png"
 
 interface skillProp {
   skill: string;
@@ -12,39 +14,39 @@ interface skillProp {
 const skills: skillProp[] = [
   {
     skill: "javascript",
-    img:'/src/assets/untitled (3).png'
+    img:ninety
   },
   {
     skill: "typescript",
-    img:'/src/assets/untitled (3).png'
+    img:ninety
   },
   {
     skill: "React",
-    img:'/src/assets/untitled (1).png'
+    img:ninetyFive
   },
   {
     skill: "Redux",
-    img:'/src/assets/untitled (1).png'
+    img:ninetyFive
   },
   {
     skill: "Nodejs",
-    img:"/src/assets/untitled (2).png"
+    img:eighty
   },
   {
     skill: "express",
-    img:"/src/assets/untitled (2).png"
+    img:eighty
   },
   {
     skill: "mongodb",
-    img:'/src/assets/untitled (1).png'
+    img:eighty
   },
   {
     skill: "restful apis",
-    img:"/src/assets/untitled (2).png"
+    img: ninetyFive
   },
 ];
 
-export default function Skills() {
+const Skills:FC = () => {
 
   
 const responsive = {
@@ -95,3 +97,5 @@ const responsive = {
     </>
   );
 }
+
+export default Skills
