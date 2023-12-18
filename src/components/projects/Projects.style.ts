@@ -11,10 +11,11 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width:100%;
 `
 export const SubText = styled.div`
   width: 70%;
-  font-family: 'Rubik Maps';
+  font-family: 'Oswald', sans-serif;
 font-size: 17px;
 color: gray;
 text-align: center;

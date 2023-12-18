@@ -22,7 +22,7 @@ export const Img = styled.img`
 export const Wrapper = styled.div`
   padding:4rem 3rem;
   display: flex;
- justify-content: space-between;
+ justify-content: space-between;z
  align-items: flex-start;
 
  @media screen and (max-width:768px){  

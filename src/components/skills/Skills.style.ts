@@ -22,7 +22,10 @@ export const Container = styled.div`
     top: 16rem;
     padding-top: 3rem 1rem;
     max-height: 800px;
-  } 
+    width:100%;
+    margin:auto;
+    left:1rem;
+  }
 /*
   
   @media screen and (max-width:768px){
@@ -44,11 +47,11 @@ font-family: 'Rubik Maps';
 font-size: 17px;
 color: gray;
 text-align: center;
-
+font-family: 'Oswald', sans-serif;
 `
 export const SkillText = styled.div`
 font-family: 'Rubik Maps';
-font-size: 17px;
+font-size: 19px;
 color: gray;
 text-align: center;
 text-transform:capitalize;
