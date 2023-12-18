@@ -18,3 +18,16 @@ export const Text = styled.div`
 font-family: 'Poppins';
 margin-top: .5rem;
 `
+
+export const IconWrap = styled.div`
+  display: flex;
+   margin-right: 1rem;
+
+   @media screen and (max-width:768px){
+    position: absolute;
+    left: 1rem;
+    transition:all .5s;
+    flex-direction: column;
+    top: 13rem;      
+   }
+`
