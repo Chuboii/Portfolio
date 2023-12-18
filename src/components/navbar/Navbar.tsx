@@ -114,7 +114,7 @@ export default function Navbar() {
                         <Icon><i className="fa fa-instagram" aria-hidden="true"></i></Icon>   
                     </IconWrap>
 
-                    <Button>Let's Connect</Button>
+                    <Button href='#contact'>Let's Connect</Button>
                 </Wrapper>
     </Header>            
             </>

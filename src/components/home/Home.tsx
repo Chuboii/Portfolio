@@ -57,7 +57,7 @@ function Home() {
                   <Image src={ img} />
               </WrapImage>
     </Box>
-              <Connect>Let's Connect <ArrowCircleRightOutlinedIcon sx={{marginLeft:".4rem"}} /></Connect>
+              <Connect href='#contact'>Let's Connect <ArrowCircleRightOutlinedIcon sx={{marginLeft:".4rem"}} /></Connect>
       </Container>
       </>
   )

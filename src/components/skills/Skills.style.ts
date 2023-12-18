@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background:#1c1c1d;
+  background:transparent;
   position: relative;
-  top: 18rem;
-  width: 90%;
+  top: 21rem;
+  height: 100%;
+  max-height: 600px;
   margin:auto;
   margin-bottom:2rem;
   padding: 1rem;
@@ -14,22 +15,87 @@ export const Container = styled.div`
   justify-content:center;
   align-items: center;
   flex-direction: column;
+  background-color: #151515;
+  padding-top: 4rem;
+  width: 80%;
+  @media screen and (max-width:768px){
+    top: 16rem;
+    padding-top: 3rem 1rem;
+    max-height: 800px;
+  } 
+/*
   
   @media screen and (max-width:768px){
     width:90%;
     border-radius:10px;
-  }
+    height: 250px;
+  } */
+`
+export const ArrowLeft = styled.img`
+
+`
+
+export const ArrowRight = styled.img`
+
 `
 
 export const Text = styled.p`
-  margin:.5rem 0;
+font-family: 'Rubik Maps';
+font-size: 17px;
+color: gray;
+text-align: center;
+
 `
-export const H2 = styled.h2`
-   margin:.5rem 0;
-`
-export const Box = styled.div`
-  overflow:hidden;
-  width:100%;
-  height:300px;
+export const SkillText = styled.div`
+font-family: 'Rubik Maps';
+font-size: 17px;
+color: gray;
+text-align: center;
+text-transform:capitalize;
+margin-top: .5rem;
+
+
+@media screen and (min-width:768px) {
+  font-size: 20px;
+  margin-left: 2rem;
+}
 `
 
+export const H2 = styled.h2`
+    font-family: 'Rubik Doodle Triangles';
+  font-size: 40px;
+   margin: 0;
+`
+export const Box = styled.div`
+
+  width:100%;
+  height:300px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+
+`
+export const Icons = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+
+`
+
+export const Img = styled.img`
+
+ @media screen and (min-width:768px) {
+  margin-left: 2rem;
+}
+`
+
+export const Wrapper = styled.div`
+  margin: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+`

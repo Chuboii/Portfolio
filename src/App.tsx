@@ -1,14 +1,11 @@
-import Home from "./components/home/Home"
-import Navbar from "./components/navbar/Navbar"
-import Skills from './components/skills/Skills'
+import RenderRoutes from "./routes/Routes"
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <Home />
-      <Skills/>
+      <RenderRoutes/>
+    
     </>
   )
 }

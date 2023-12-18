@@ -48,10 +48,12 @@ export const Logo = styled.h2`
    }
 `
 
-export const Button = styled.button`
+export const Button = styled.a`
   display: flex;
   border: 1px solid white;
   background-color: transparent;
+  padding:.5rem 1rem;
+  color: white;
 `
 
 export const LinkWrap = styled.div<LinkWrapProps>`

@@ -5,7 +5,7 @@ export const Container = styled.div`
 
   color: white;
   position:relative;
-  top: 24rem;
+  top: 22rem;
   transform: translateY(-50%);
   padding: 0 3rem;
 
@@ -71,12 +71,13 @@ export const Image = styled.img`
   width: 400px;
 `
 
-export const Connect = styled.div`
+export const Connect = styled.a`
   display:flex;
   align-items:center;
   position:relative;
   top:3rem;
   font-weight:700;
+  color: white;
 `
 
 export const Box = styled.div`
