@@ -1,9 +1,4 @@
-import { Container, Box, H2, Text, Icons, Img, Wrapper, SkillText } from "./Skills.style";
-import leftArrow from "../../assets/arrow1.svg";
-import rightArrow from "../../assets/arrow2.svg";
-import progressBar1 from "/src/assets/untitled (1).png";
-import progressBar2 from '/src/assets/untitled (2).png'
-import progressBar3 from "/src/assets/untitled (3).png"
+import { Container, Box, H2, Text, Img, Wrapper, SkillText } from "./Skills.style";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 

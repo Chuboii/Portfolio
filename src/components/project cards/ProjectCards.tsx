@@ -4,7 +4,7 @@ import swiftscribe from '../../assets/swiftscribe project 2.png'
 import aiquotes from '../../assets/ai quotes.png'
 import { Link } from 'react-router-dom'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import React from 'react'
+import {FC} from 'react'
 
 interface Styles {
     color: string;
@@ -16,7 +16,7 @@ const style : Styles = {
     textTransform:"uppercase"
 }
 
-const ProjectCards: React.FC= () => {
+const ProjectCards: FC= () => {
     
     return (
         <>

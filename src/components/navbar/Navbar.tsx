@@ -1,5 +1,5 @@
 import { DisplayMenu, Wrapper, Header, Logo, Button, LinkWrap, IconWrap, Link, Icon } from './Navbar.style';
-import React,{ useEffect, useState, useCallback, useReducer } from 'react'
+import React,{ useEffect, useCallback, useReducer } from 'react'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 
