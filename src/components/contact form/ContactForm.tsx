@@ -171,7 +171,7 @@ const ContactForm: FC = memo (() => {
                         <Textarea placeholder="message" name="message"  {...register("message", registerOptions.message)}/>
                     </Box>
 
-                    <Button>{loading ? "Sending" : "Send"} </Button>
+                    <Button>{loading ? "Sending..." : "Send"} </Button>
                 </Wrapper>
         </Form>
         </>
