@@ -60,7 +60,7 @@ margin-top: .5rem;
 
 @media screen and (min-width:768px) {
   font-size: 20px;
-  margin-left: 2rem;
+  
 }
 `
 
