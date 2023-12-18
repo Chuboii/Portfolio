@@ -23,18 +23,18 @@ const transporter = nodemailer.createTransport({
 })
 
 
+
 router.post('/contact', (req, res) => {
     const { email, firstname,lastname, message,phone } = req.body
  
-    try {
-        
+    try { 
         const mailOptions = {
             from: process.env.EMAIL,
             to: email,
             subject: "Contact Form Submission ~ Portfolio",
             html: `
             <h1> Here's the contact information of user: </h1>
-            
+
             <p>Firstname: ${firstname} </p>
             <p>Lastname: ${lastname} </p>
             <p>Phone: ${phone} </p>

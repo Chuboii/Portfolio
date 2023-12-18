@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
 const ContactForm: FC = memo (() => {
-    const { register, handleSubmit, formState: { errors } } = useForm({ mode: "onChange" })
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: "onChange" })
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
 
@@ -118,7 +118,7 @@ const ContactForm: FC = memo (() => {
                     progress: undefined,
                     theme: "colored",
                 });
-                
+                reset()
                 setLoading(false)
             }
             else {
