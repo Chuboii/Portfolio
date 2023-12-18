@@ -1,5 +1,5 @@
 import { DisplayMenu, Wrapper, Header, Logo, Button, LinkWrap, IconWrap, Link, Icon } from './Navbar.style';
-import React,{ useEffect, useCallback, useReducer } from 'react'
+import React,{useRef, useEffect, useCallback, useReducer } from 'react'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -50,7 +50,7 @@ const toggleReducer : React.Reducer<stateObject, actionObject> = (state, action)
 
 export default function Navbar() {
     const [state, dispatch] = useReducer(toggleReducer, TOGGLE_INITIAL_STATES)
-
+    const links = useRef()
 
     useEffect(() => {
 
@@ -83,6 +83,9 @@ export default function Navbar() {
   
   const enableNavBar = useCallback(() => {
       dispatch({ type: 'TOGGLE_NAVBAR', payload: !state.isToggled })
+      
+  
+
   }, [state.isToggled])
 
 
@@ -99,7 +102,7 @@ export default function Navbar() {
                 </DisplayMenu>
                 <Wrapper>
                     <LinkWrap display={state.isToggled ? "1" : '0'}
-                      
+                     ref={links}
                     >
                         <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"} href="#">Home</Link>
                         <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#skills">Skills</Link>

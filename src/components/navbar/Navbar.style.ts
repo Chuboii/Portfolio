@@ -68,6 +68,7 @@ export const LinkWrap = styled.div<LinkWrapProps>`
     padding:1rem;
     right: 2rem;
     opacity: ${({ display }) => display};
+    display:${({display}) => display === "1" ? "block" : "none"};
     transition: all .6s;
     z-index: 1;
    }
@@ -84,6 +85,7 @@ export const IconWrap = styled.div<IconWrapProps>`
     flex-direction: column;
     top: 13rem;      
     opacity:${({display}) => display};
+    
    }
 `
 
