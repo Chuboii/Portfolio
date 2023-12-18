@@ -12,6 +12,7 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width:100%;
+  box-sizing:border-box;
 `
 export const SubText = styled.div`
   width: 70%;

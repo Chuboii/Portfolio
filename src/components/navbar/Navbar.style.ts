@@ -79,7 +79,7 @@ export const IconWrap = styled.div<IconWrapProps>`
 
    @media screen and (max-width:768px){
     position: absolute;
-    left: 1rem;
+    left:.4rem;
     transition:all .5s;
     flex-direction: column;
     top: 13rem;      

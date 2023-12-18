@@ -37,10 +37,24 @@ export const IconWrap = styled.div`
    margin-right: 1rem;
 
    @media screen and (max-width:768px){
-    position: absolute;
-    left: 1rem;
+    justify-content:center;
     transition:all .5s;
-    flex-direction: column;
-    top: 13rem;      
+   }
+`
+export const Icon = styled.div`
+display: flex;
+  align-items: center;
+  margin-right: .5rem;
+  width: 30px;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255,.7);
+   color:  rgba(255, 255, 255,.7);
+   justify-content: center;
+
+ @media screen and (max-width:768px){
+    margin-top: 2rem;
+   
    }
 `

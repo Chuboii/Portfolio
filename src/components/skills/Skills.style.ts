@@ -24,7 +24,7 @@ export const Container = styled.div`
     max-height: 800px;
     width:100%;
     margin:auto;
-    left:1rem;
+   box-sizing:border-box;
   }
 /*
   

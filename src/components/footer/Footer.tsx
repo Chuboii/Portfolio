@@ -1,6 +1,6 @@
 import {FC} from 'react'
-import { Icon } from '../navbar/Navbar.style'
-import {Container, Logo, Wrapper, Text, IconWrap } from './Footer.style'
+//import { Icon } from '../navbar/Navbar.style'
+import {Container, Logo, Wrapper, Text, IconWrap,Icon } from './Footer.style'
 
 const Footer: FC = () => {
     
