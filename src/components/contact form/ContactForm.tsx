@@ -100,7 +100,7 @@ const ContactForm: FC = memo (() => {
         try {
             setLoading(true)
             if (data.firstname && data.lastname && data.email && data.phone && data.message) {
-                const res = await axios.post("http://localhost:8080/api/contact", {
+                const res = await axios.post("https://portfolio-nog1.onrender.com/api/contact", {
                     firstname: data.firstname,
                     lastname: data.lastname,
                     email: data.email,
