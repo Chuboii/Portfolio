@@ -39,8 +39,7 @@ emailListRouter.post('/newsletter', async (req, res) => {
         
         const checkEmails = await SubscribedUsers.find({ email })
         
-        console.log(checkEmails)
-    
+  
         if (checkEmails.length > 0) return res.status(500).json("Email already subscribbed")
         
         const subscribedUser = new SubscribedUsers({
@@ -78,16 +77,13 @@ router.post('/contact', (req, res) => {
 
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
-                console.error('Error sending email:', error);
                 res.status(500).json("Error sending email")
             } else {
                 res.status(200).send("email sent successfully")
-                console.log('Email sent:', info.response);
             }
         });
     }
     catch (e) {
-        console.log(e)
         res.status(500).json("internal server error")
     }
 })

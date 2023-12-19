@@ -19,6 +19,7 @@ export const SubText = styled.div`
   font-family: 'Oswald', sans-serif;
 font-size: 17px;
 color: gray;
+margin-bottom: 1rem;
 text-align: center;
 `
 

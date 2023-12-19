@@ -32,7 +32,7 @@ export const Header = styled.header<HeaderProps>`
   left: 0;
  right: 0;
  height: 40px;
- z-index: 2;
+ z-index: 2000;
   padding:1rem 3rem;
   transition: all .5s;
    background-color: ${({ changebg }) => changebg};
@@ -130,6 +130,12 @@ export const Icon = styled.div`
   border: 1px solid rgba(255, 255, 255,.7);
    color:  rgba(255, 255, 255,.7);
    justify-content: center;
+   transition: all .2s ease-in-out;
+
+   &:hover{
+    border: 3px solid;
+    transform: rotateY(36deg);
+   }
 
  @media screen and (max-width:768px){
     margin-top: 2rem;

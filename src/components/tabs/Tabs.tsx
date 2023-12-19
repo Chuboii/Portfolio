@@ -5,7 +5,7 @@ export default function Tabs() {
 
     return (
         <>
-            <Container>
+            <Container >
                 <Tab>
                     Tab 1
                 </Tab>

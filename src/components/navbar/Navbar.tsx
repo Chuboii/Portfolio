@@ -2,6 +2,8 @@ import { DisplayMenu, Wrapper, Header, Logo, Button, LinkWrap, IconWrap, Link, I
 import React,{useRef, useEffect, useCallback, useReducer } from 'react'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import CloseIcon from '@mui/icons-material/Close';
+import TrackVisibility from 'react-on-screen';
+ 
 
 interface NavbarReducer {
     isPageScrolled: boolean;
@@ -90,36 +92,42 @@ export default function Navbar() {
 
 
     return (
-      <>
-            <Header changebg={state.isPageScrolled ? "#1c1c1d" : "transparent"}>
-                <Logo>Chuboi</Logo>
-                <DisplayMenu>
-                 {state.isToggled ?
-               <CloseIcon onClick={enableNavBar } />
-                  : <MenuOutlinedIcon onClick={enableNavBar
-                  } /> 
-                 }
-                </DisplayMenu>
-                <Wrapper>
-                    <LinkWrap display={state.isToggled ? "1" : '0'}
-                     ref={links}
-                    >
-                        <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"} href="#">Home</Link>
-                        <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#skills">Skills</Link>
-                        <Link className={state.isToggled ?"animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"}  href="#projects">Projects</Link>
-                    </LinkWrap>
+        <>
+            <TrackVisibility partialVisibility>
+                {({isVisible}) =>
+                    <Header changebg={state.isPageScrolled ? "#1c1c1d" : "transparent"}>
+                        <Logo className={isVisible && 'animate__animated animate__rubberBand'} >Chuboi</Logo>
+                        <DisplayMenu>
+                            {state.isToggled ?
+                                <CloseIcon onClick={enableNavBar} />
+                                : <MenuOutlinedIcon onClick={enableNavBar
+                                } />
+                            }
+                        </DisplayMenu>
+                        <Wrapper>
+                            <LinkWrap
+                                display={state.isToggled ? "1" : '0'}
+                                ref={links}
+                                className={isVisible && 'animate__animated animate__rubberBand'} 
+                            >
+                                <Link className={state.isToggled ? "animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"} href="#">Home</Link>
+                                <Link className={state.isToggled ? "animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"} href="#skills">Skills</Link>
+                                <Link className={state.isToggled ? "animate__animated animate__backInLeft" : "animate__animated animate__rubberBand"} href="#projects">Projects</Link>
+                            </LinkWrap>
 
-                    <IconWrap display={state.iconToggleDisplay ? "1" : '0'}
-                      >
-                     <Icon><i className="fa fa-facebook" aria-hidden="true"></i></Icon>
-                     <Icon><i className="fa fa-linkedin" aria-hidden="true"></i></Icon>
-                     <Icon><i className="fa fa-github" aria-hidden="true"></i></Icon>   
-                        <Icon><i className="fa fa-instagram" aria-hidden="true"></i></Icon>   
-                    </IconWrap>
+                            <IconWrap display={state.iconToggleDisplay ? "1" : '0'}
+                            >
+                                <Icon className={isVisible && 'animate__animated animate__rubberBand'} ><i className="fa fa-facebook" aria-hidden="true"></i></Icon>
+                                <Icon className={isVisible && 'animate__animated animate__rubberBand'} ><i className="fa fa-linkedin" aria-hidden="true"></i></Icon>
+                                <Icon className={isVisible && 'animate__animated animate__rubberBand'} ><i className="fa fa-github" aria-hidden="true"></i></Icon>
+                                <Icon className={isVisible && 'animate__animated animate__rubberBand'} ><i className="fa fa-instagram" aria-hidden="true"></i></Icon>
+                            </IconWrap>
 
-                    <Button href='#contact'>Let's Connect</Button>
-                </Wrapper>
-    </Header>            
+                            <Button className={isVisible && 'animate__animated animate__rubberBand'} href='#contact'>Let's Connect</Button>
+                        </Wrapper>
+                    </Header>
+                }
+    </TrackVisibility>            
             </>
   );
 }

@@ -10,6 +10,7 @@ export const Container = styled.div`
 export const Img = styled.img`
   width: 500px;
   width: 45%;
+  object-fit: cover;
   margin-right: 4rem;
 
   @media screen and (max-width:768px){
