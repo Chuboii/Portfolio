@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css'
 
 const ContactForm: FC = memo (() => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: "onChange" })
-    const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
 
 
@@ -99,8 +98,7 @@ const ContactForm: FC = memo (() => {
     const submitForm = async (data) => {
         try {
             setLoading(true)
-            if (data.firstname && data.lastname && data.email && data.phone && data.message) {
-                const res = await axios.post("https://portfolio-nog1.onrender.com/api/contact", {
+                  axios.post("https://portfolio-nog1.onrender.com/api/contact", {
                     firstname: data.firstname,
                     lastname: data.lastname,
                     email: data.email,
@@ -120,23 +118,9 @@ const ContactForm: FC = memo (() => {
                 });
                 reset()
                 setLoading(false)
-            }
-            else {
-                toast.error('You must fill all fields!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                });
-            }
         }
-        catch (e) {
+        catch (e : unknown) {   
             setLoading(false)
-
             if (e.response.data === "Error sending email") {
              toast.error('Please provide a verified email!', {
                     position: "top-right",
@@ -159,16 +143,16 @@ const ContactForm: FC = memo (() => {
                 <H1>Get in Touch</H1>
                 <Wrapper>
                     <Box>
-                        <Input placeholder="first name" name="firstname" {...register("firstname", registerOptions.firstname)} />
+                        <Input placeholder="first name" {...register("firstname", registerOptions.firstname)} />
         
-                        <Input placeholder="last name" name="lastname"  {...register("lastname", registerOptions.lastname)} />
+                        <Input placeholder="last name"  {...register("lastname", registerOptions.lastname)} />
                     </Box>
                     <Box>
-                        <Input placeholder="email address" name="email"  {...register("email", registerOptions.email)}/>
-                        <Input placeholder="phone no" name="phone"  {...register("phone", registerOptions.phone)}/>
+                        <Input placeholder="email address" {...register("email", registerOptions.email)}/>
+                        <Input placeholder="phone no"  {...register("phone", registerOptions.phone)}/>
                     </Box>
                     <Box>
-                        <Textarea placeholder="message" name="message"  {...register("message", registerOptions.message)}/>
+                        <Textarea placeholder="message"  {...register("message", registerOptions.message)}/>
                     </Box>
 
                     <Button>{loading ? "Sending..." : "Send"} </Button>

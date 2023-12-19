@@ -3,6 +3,10 @@ import img from '../../assets/header-img.svg'
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import { TypeAnimation } from 'react-type-animation';
 import TrackVisibility from 'react-on-screen';
+
+interface ClassProps {
+    className: string | undefined
+}
  
 function Home() {
   
