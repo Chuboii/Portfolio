@@ -73,7 +73,7 @@ const responsive = {
     <>
       <TrackVisibility>
         {({isVisible}) =>
-          <Container id="skills" className={isVisible && 'animate__animated animate__bounce'}>
+          <Container id="skills" className={isVisible ? 'animate__animated animate__bounce' : ""}>
             <H2>Skills</H2>
             <Text>
               With proficiency spanning a diverse array of technologies, I excel in JavaScript, React, Node.js, and MongoDB, consistently delivering high-quality solutions. My robust skill set is complemented by a nuanced understanding of front-end and back-end development, underscored by a meticulous approach to problem-solving and a demonstrated track record of successful project implementations.

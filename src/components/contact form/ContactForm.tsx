@@ -5,8 +5,20 @@ import { useForm } from 'react-hook-form'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
+interface FormDataProps {
+    firstname: string;
+    lastname: string;
+    email: string;
+    phone: string;
+    message: string;
+}
+
+
+
+
+    
 const ContactForm: FC = memo (() => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: "onChange" })
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<FormDataProps>({ mode: "onChange" })
     const [loading, setLoading] = useState(false)
 
 
@@ -27,8 +39,9 @@ const ContactForm: FC = memo (() => {
             required:true
         }
 
-
     }
+
+
 
     useEffect(() => {
         if (errors.firstname) {
@@ -95,7 +108,7 @@ const ContactForm: FC = memo (() => {
     }, [errors.firstname, errors.lastname, errors.email, errors.phone, errors.message]);
 
 
-    const submitForm = async (data) => {
+    const submitForm = async (data: FormDataProps) => {
         try {
             setLoading(true)
                   axios.post("https://portfolio-nog1.onrender.com/api/contact", {
@@ -119,19 +132,21 @@ const ContactForm: FC = memo (() => {
                 reset()
                 setLoading(false)
         }
-        catch (e : unknown) {   
+        catch (e) {   
             setLoading(false)
-            if (e.response.data === "Error sending email") {
-             toast.error('Please provide a verified email!', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                });
+            if (axios.isAxiosError(e)) {
+                if (e?.response?.data === "Error sending email") {
+                    toast.error('Please provide a verified email!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                }
             }
            
         }

@@ -5,21 +5,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import {useForm} from 'react-hook-form'
 
-interface registerProps{
-    email: {
-        required: string;
-        pattern: {
-            value: RegExp;
-            message: string;
-        }
-    };
-}
+interface FormDataProps {
+    email: string;
+  }
+  
+
 
 const NewsLetter: FC = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm({ mode: "onChange" })
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<FormDataProps>({ mode: "onChange" })
     const [loading, setLoading] = useState(false)
 
-    const registerOptions : registerProps = {
+    const registerOptions = {
         email: {
             required: "email is required",
             pattern: {
@@ -61,41 +57,43 @@ const NewsLetter: FC = () => {
     }, [errors.email])
  
 
-    const submitForm = async(data : any) => {
+    const submitForm = async(data : FormDataProps) => {
         try {
-                setLoading(true)
-                await axios.post('https://portfolio-nog1.onrender.com/api/newsletter', {
-                    email: data.email
-                })
+            setLoading(true)
 
-                setLoading(false)
-                toast.success("Success! You've successfully subscribed", {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                });
+            await axios.post('https://portfolio-nog1.onrender.com/api/newsletter', {
+                email: data.email
+            })
+
+            setLoading(false)
+            toast.success("Success! You've successfully subscribed", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
             reset()
         }
-        catch (e: any) {
-            
-            if (e.response.data === 'Email already subscribbed') {
-                setLoading(false)
-                reset()
-                toast.error('Oops! Email is subscribed already', {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                });
+        catch (e) {
+            if (axios.isAxiosError(e)) {
+                if (e?.response?.data === 'Email already subscribbed') {
+                    setLoading(false)
+                    reset()
+                    toast.error('Oops! Email is subscribed already', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                    });
+                }
             }
         }
        
