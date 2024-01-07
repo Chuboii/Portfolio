@@ -3,9 +3,9 @@ import vidtube from '../../assets/vidtube image1.png'
 import swiftscribe from '../../assets/swiftscribe project 2.png'
 import aiquotes from '../../assets/ai quotes.png'
 import { Link } from 'react-router-dom'
-import datapulse from '../../assets/datapulse network.png'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import {FC} from 'react'
+import { FC } from 'react'
+import datapulse from '../../assets/datapulse network.png'
 
 interface Styles {
     color: string;
@@ -21,12 +21,11 @@ const ProjectCards: FC= () => {
     
     return (
         <>
-            <Container>
-                
-            <Card>
+        <Container>
+        <Card>
                     <Image src={datapulse} /> 
                     <Wrapper>
-                    <Description>Datapulse networks is a fullstack sme website that handles data and airtime subscription along with many services</Description>
+                    <Description>Datapulse is a fullstack sme website that handles data and airtime subscription along with many services</Description>
                     <Links>
                             <LinkToSite><Link to={'https://datapulsenetwork.netlify.app'}  style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Datapulse network</Link></LinkToSite>
                         <LinkToCode><Link to={'https://github.com/Chuboii/datapulse-network'}  style={style}><OpenInNewIcon/> source code</Link></LinkToCode>
@@ -34,7 +33,7 @@ const ProjectCards: FC= () => {
                         </Links>
                     </Wrapper>
                 </Card>
-
+                
          <Card>
                     <Image src={vidtube} /> 
                     <Wrapper>
@@ -65,7 +64,7 @@ const ProjectCards: FC= () => {
                     <Wrapper>
                     <Description>AI Quotes is a quote generator site where you get different categories of quotes and jokes. Non-stop fun.</Description>
                     <Links>
-                            <LinkToSite><Link  style={style} to={'https://viddtube.netlify.app'} style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Ai quotes</Link></LinkToSite>
+                            <LinkToSite><Link to={'https://viddtube.netlify.app'} style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Ai quotes</Link></LinkToSite>
                         <LinkToCode><Link  style={style} to={'https://github.com/Chuboii/vidtube-client'}><OpenInNewIcon/> source code</Link></LinkToCode>
                         </Links>
                     </Wrapper>
