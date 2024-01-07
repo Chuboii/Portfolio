@@ -17,17 +17,16 @@ function Home() {
           <Container>
             <Box>
               <WrapText>
-                <Welcome className={isVisible && 'animate__animated animate__rubberBand'}>Welcome to my space</Welcome>
-                <Intro className={isVisible && 'animate__animated animate__rubberBand'} >
+                <Welcome>Welcome to my space</Welcome>
+                <Intro>
                   <TypeAnimation
                     sequence={[
                       "Hi, I'm Onyechere Favour",
-                      1000,
-                      "I'm a full-stack developer",
+                      1000
                     ]}
                     wrapper="span"
                     speed={30}
-                    style={{ fontSize: window.innerWidth < 768 ? "30px" : "55px", display: 'inline-block' }}
+                    style={{ fontSize: window.innerWidth < 768 ? "30px" : "50px", display: 'inline-block' }}
                     repeat={Infinity}
                   />
                 </Intro>
