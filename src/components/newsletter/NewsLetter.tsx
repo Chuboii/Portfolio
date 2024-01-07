@@ -105,7 +105,7 @@ const NewsLetter: FC = () => {
             <ToastContainer/>
             <Container>
                 <Wrapper>
-                    <H1>Subscribe to our Newsletter & Never miss latest updates</H1>
+                    <H1>Subscribe to my Newsletter & Never miss latest updates</H1>
                 </Wrapper>
 
                 <Wrapper>
