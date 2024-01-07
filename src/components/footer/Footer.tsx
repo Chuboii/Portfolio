@@ -2,6 +2,7 @@ import {FC} from 'react'
 //import { Icon } from '../navbar/Navbar.style'
 import {Container, Logo, Wrapper, Text, IconWrap,Icon } from './Footer.style'
 
+const date = new Date()
 const Footer: FC = () => {
     
 
@@ -16,7 +17,7 @@ const Footer: FC = () => {
                      <Icon><i className="fa fa-github" aria-hidden="true"></i></Icon>   
                         <Icon><i className="fa fa-instagram" aria-hidden="true"></i></Icon> 
                     </IconWrap>
-                    <Text>&copy; copyright 2023  Onyechere Favour</Text>
+                    <Text>&copy; copyright {date.getFullYear()}  Onyechere Favour</Text>
                 </Wrapper>
         </Container>
         </>

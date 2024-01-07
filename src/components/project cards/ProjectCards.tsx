@@ -28,8 +28,8 @@ const ProjectCards: FC= () => {
                     <Wrapper>
                     <Description>Datapulse networks is a fullstack sme website that handles data and airtime subscription along with many services</Description>
                     <Links>
-                            <LinkToSite><Link to={'https://datapulsenetwork.netlify.app'}  style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> vidtube</Link></LinkToSite>
-                        <LinkToCode><Link to={'https://github.com/Chuboii/datapulse-network'}  style={style}><OpenInNewIcon/> client</Link></LinkToCode>
+                            <LinkToSite><Link to={'https://datapulsenetwork.netlify.app'}  style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Datapulse network</Link></LinkToSite>
+                        <LinkToCode><Link to={'https://github.com/Chuboii/datapulse-network'}  style={style}><OpenInNewIcon/> source code</Link></LinkToCode>
                                  
                         </Links>
                     </Wrapper>
