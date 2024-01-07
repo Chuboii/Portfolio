@@ -16,8 +16,8 @@ function Home() {
         {({isVisible}) => 
           <Container>
             <Box>
-              <WrapText>
-                <Welcome>Welcome to my space</Welcome>
+              <WrapText className={isVisible && 'animate__animated animate__fadeIn'}>
+                <Welcome className={isVisible && 'animate__animated animate__fadeIn'}>Welcome to my space</Welcome>
                 <Intro>
                   <TypeAnimation
                     sequence={[
