@@ -3,6 +3,7 @@ import vidtube from '../../assets/vidtube image1.png'
 import swiftscribe from '../../assets/swiftscribe project 2.png'
 import aiquotes from '../../assets/ai quotes.png'
 import { Link } from 'react-router-dom'
+import datapulse from '../../assets/datapulse network.png'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import {FC} from 'react'
 
@@ -20,7 +21,20 @@ const ProjectCards: FC= () => {
     
     return (
         <>
-        <Container>
+            <Container>
+                
+            <Card>
+                    <Image src={datapulse} /> 
+                    <Wrapper>
+                    <Description>Datapulse networks is a fullstack sme website that handles data and airtime subscription along with many services</Description>
+                    <Links>
+                            <LinkToSite><Link to={'https://datapulsenetwork.netlify.app'}  style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> vidtube</Link></LinkToSite>
+                        <LinkToCode><Link to={'https://github.com/Chuboii/datapulse-network'}  style={style}><OpenInNewIcon/> client</Link></LinkToCode>
+                                 
+                        </Links>
+                    </Wrapper>
+                </Card>
+
          <Card>
                     <Image src={vidtube} /> 
                     <Wrapper>
