@@ -1,6 +1,7 @@
 import { Container, Card, Image, Description,Wrapper, Links, LinkToSite, LinkToCode } from './ProjectCards.style'
 import vidtube from '../../assets/vidtube image1.png'
 import swiftscribe from '../../assets/swiftscribe project 2.png'
+import nerzpaints from '/src/assets/Screenshot 2024-02-29 205926.png'
 import aiquotes from '../../assets/ai quotes.png'
 import { Link } from 'react-router-dom'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
@@ -66,6 +67,16 @@ const ProjectCards: FC= () => {
                     <Links>
                             <LinkToSite><Link to={'https://viddtube.netlify.app'} style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Ai quotes</Link></LinkToSite>
                         <LinkToCode><Link  style={style} to={'https://github.com/Chuboii/vidtube-client'}><OpenInNewIcon/> source code</Link></LinkToCode>
+                        </Links>
+                    </Wrapper>
+                </Card>
+
+                <Card>
+                    <Image src={nerzpaints} />  
+                    <Wrapper>
+                    <Description>Nerzpaints is a paint company where you check out their paint products</Description>
+                    <Links>
+                            <LinkToSite><Link to={'https://nerzpaints.com'} style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Ai quotes</Link></LinkToSite>
                         </Links>
                     </Wrapper>
                 </Card>
