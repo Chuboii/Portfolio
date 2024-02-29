@@ -76,7 +76,7 @@ const ProjectCards: FC= () => {
                     <Wrapper>
                     <Description>Nerzpaints is a paint company where you check out their paint products</Description>
                     <Links>
-                            <LinkToSite><Link to={'https://nerzpaints.com'} style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Ai quotes</Link></LinkToSite>
+                            <LinkToSite><Link to={'https://nerzpaints.com'} style={{color:'blue', textTransform:"uppercase"}}><OpenInNewIcon/> Nerzpaints</Link></LinkToSite>
                         </Links>
                     </Wrapper>
                 </Card>
