@@ -50,7 +50,7 @@ text-align: center;
 font-family: 'Oswald', sans-serif;
 `
 export const SkillText = styled.div`
-font-family: 'Rubik Maps';
+font-family: 'Oswald', sans-serif;
 font-size: 19px;
 color: gray;
 text-align: center;

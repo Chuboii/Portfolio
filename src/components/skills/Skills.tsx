@@ -23,6 +23,10 @@ const skills: skillProp[] = [
     img:ninety
   },
   {
+    skill: "NextJs",
+    img:ninety
+  },
+  {
     skill: "React",
     img:ninetyFive
   },
